@@ -1,0 +1,185 @@
+# WEEK 1: LINUX FOUNDATION
+===========================
+  ## DAY 1: INTRO TO LINUX
+---------------------------- 
+[ MODULE 1: OPERATING SYSTEM ]
+- Linux is a free open source operating system. 
+- os is system software which acts as an interface between hardware and user. 
+- process management,memory management,file system,device mangemnet,security,user interface(UI),networking are the features of OS. 
+- linux is famous for handling NTFS & ext4. 
+- linux is a Command Line Interface (CLI).
+- linux is known for its reliability,performance and scalability.
+- linux distros;
+	Ubuntu,
+	Red Hat Enterprise Linux(RHEL),
+	Amazon Linux,
+	Centos,
+	Debian.
+- linux used in;
+	Servers and data centers,
+	Cloud computing(Aws,Azure,GCP),
+	Super computers,
+	MObile Devices(Android),
+	DevOps and system adminstration
+[ MODULE 2: LINUX VS UNIX ]
+- Both use similar commands,directory structure(files system),multi tasking and user environments.
+- Differ in licensing,cost,devoplopment model and usage.
+- Unix commerical and vendor specific {AIX(IBM),Solaris(ORACLE) AND HP-UX},these system are tightly controlled,thoroughly tesgted and run on speicalized hardware.
+- linux is open-source and community-driven runs on any hardware and dominant in clouds,DevOps and modern server infrastructures.
+[ MODULE 3: LINUX FLAVOURS(DISTROS)]
+- The different versions of linux built around the linux kernel,package managers and sever specific needs
+- kernel is a essential program for a an OS
+
+ * do your own research and get some knowledge on diff types of linux distros*
+[ MODULE 4: LINUX USERS ]
+- User is an account represent a person,service that interacts with the system.
+- linux is mutliuser OS.
+- Each user is identified by User ID(UID) & (GIDs).
+- Types of user;
+	Root user(UID 0 )
+	  - who has complete control over the system,can install software,modify system files,manage users and controll hardware.
+	Normal user(UID >= 1000)
+	  - these users have limited permissions  and cannot makse system-wide changes without elevated privileges(SUDO).
+	  - created for everday use
+	System users(UID <1000)
+	  - these users do not log in interactively and improve security by isolating services.
+	  - used by system services and applications (web servers,databses).
+- Linux enforces security through file ownership,permisiions (read,write,execute),and access control,ensuring users can only accesss what they are authorized to use.
+[ MODULE 5: LINUX VS WINDOWS ]
+- linux and windows differ mainly in licensing,security,customization and usage.
+- linux allows users to view ,modify and distribute its soucre code,highly customizable and community driven{ OPEN-SOUCRED OS}.
+- windows is closed-source and contolled by Microsoft,offrering a consistent but less flexible environment.
+- linux is more secure and stable especially for servers,because of strong permission controls and fewer malware thearts.
+- Windows is seucre but more often and commonly tageted by malware due to its large user base.
+- windows excels in desktop usablitiy,gamimg and commercial software support.
+- linux dominates in servers,cloud platforms, development environments.
+ 
+  ## DAY 2: VIRTUALIZATION
+----------------------------
+[MODULE 1: VIRTUALIZATION ]
+- It is a technology that allows to create virtual versions of computing resources such as servers,OS,storage and networks on single physical machine.
+- Physcial Hardware(CPU,RAM,Disk,Network Virtualization enabled in BIOS);
+	> Hypervisor{ type-1(KVM,ESXi) or type-2(Virtual box)}
+	  * VM 1(Linux)
+	  * VM 2(Windows)
+	  * VM 3(SErver OS)
+- Virtual machine is a virtual compeuter which runs its own OS and applications using shared physical hardware.
+- mutliple VMs runs simultaneously.
+- components of a VM;
+	> each Vm as
+	  * Guest OS- Linux,Windows,etc.
+	  * vCPU- virtual processor
+	  * vRAm- Virtual memory
+	  * Virtual Disk- File-based storage(VDI<VMDK)
+	  * virtual Network Adapter
+- workflow;
+	> Physical hardware
+	> Hypervisor Installed
+	> Virtual machine created
+	> Guest OS Installed 
+	> VM Runs
+- Virtualizaion types;
+	> Server Virtualization{cloud and data centers(AWS,AZURE,GCP)}
+	> Operating System Virtualization{DevOps pipelines,CI/CD(docker,kubernetes,podman)}
+	> Desktop Virtualization(Enterprise,call centers,secure environmentes)
+	> Storage Virtualization(LVM in linux,SAN/NAS Systems,google drive)
+	> Netwrok Virtualization(VLANs,virtual switches in hypervisors,Software Defined Netwroking)
+	> Application Virtualization(microsoft app-v)
+- Virtual Box 
+	> It is a open-source softtware that allows to run multiple OS on a single physcial computer at a same time.
+	> It installs  on host)S(windows,Linux,MacOS) and runs guest OSes
+		* Linux(Ununtu,CentOS,AL2023,Kali,etc.)
+		* windows
+		* BSD and others
+	> Each guest OS behaves like a real computer with its own CPU,RRAM Hard Disk,Network.
+	> compotents of VirtualBox
+	  * Host OS
+	  * Guest Os
+	  *  VM
+	  * VDI/VMDK
+	  * Hypervisior(tyoe- 2)
+[ MODULE 2: AWS VIRTUALIZATION]
+- AWS Virtualization(EC2- Elastic computee cloud)
+	> server
+	> storage
+	> netwrok
+	> OS-Level(containers)
+	  * ECS
+	  * EKS(kubernetes)
+	  * Fargate
+- Elastic Compute Cloud(EC2)
+	> it is an AWS service that provides run vm in cloud.
+	> EC2 instances
+	  * General Public Instances
+		+ web & application servers and small db
+		+ t3,t3a,t4g,m5,m6i
+	  * compute Optimized instances
+		+ c5,c6i
+	  * Memory OPtimized instnaces
+		+ r5,x2,r6i
+	  * storage optimized instances
+		+ i3,i4,d2
+	  * Accelerated computing instances 
+		+ P4,g5,inf1
+- AMI( Amazon Machine Image)
+	> AMI is a template used to create EC2 instances it contians OS,preinstalled software, Configuartion settings,Root Volume snapshot.
+	> types of AMI
+	  * AWS- Provided AMIs
+	  * Market place AMIs
+	  * Custom AMIs
+	> AMIs are imp for 
+	  * Faster server creation
+	  * Consistency across environments
+	  * Easy Backup and recovery
+	  * Automation and scaling
+[ MODULE 3: SYSTEM ACCESS & FILE SYSTEM]
+-  File System Structure and its Description
+	> / ~ Root directory
+	> /bin ~ Essential user commands
+	> /boot ~ bootloader files( kernel,initrd,grub configs)
+	> /dev ~ device files(disks,usb,terminal,etc)
+	> /etc ~ system configuration files and scripts
+	> /home ~ user home dir
+	> /lib ~ shared libraries needed by /bin and /sbin
+	> /media ~ mount points for removable media(USB,CD)
+	> /mnt ~ temporar mount points for filesystems
+	> /opt ~ optinonal software packages
+	> /proc ~ virtual files represnting kernel amd process info
+	> /root ~ home dir for root
+	> /run ~ runtime date(process IDs,sockets,etc) 
+	> /sbin ~ essential system adminstration commands
+	> /srv ~ data for services(web,ftp)
+	> /sys ~ kernel and device management interace
+	> /tmp ~ temporary file(cleared or reboot)
+	> /usr ~ user programs,lib and doc
+	> /var ~ variable data(logs,spool files caches)
+- Navigating throught files
+	> cd ~ change directory,it is the primary command for moving throuh file system.
+	> pwd ~ print working directory, it tells you current location
+	> ls ~ list, lists all the dierctory/files in current working directory
+- file system paths 
+	> absoulte path
+	  * begins with "/" 
+		> cd/var/log/samba
+	> relative path
+	  * does not begin with "/"
+		> cd/ var
+		  cd log
+		  cd samba
+- Creating files and Directories
+	> Touch ~ creates multiple files
+	> cp ~ stands for copy
+	> vi ~ stands for visual,is a txt editor to visualize and modify files
+	> mkdir ~ mk= make,dir= directory 
+	> sudo chmod ~ gives permission
+- Removing files
+	> rm ~ remove file
+	  * rm-f directory_name ~ to remove directory without asking delete or not 
+	  * rm-r directory_name ~ to remove directory by asking first
+	  * rm filename ~ removes a file
+	  * Truncate filename ~ empties a file without deleting it.
+- Wild cards 
+	> It is a character that can be used as substitute for any of class of characters in a search.
+	  ~ '*' represents 0 - more char
+	  ~ '?' represents a single char
+	  ~ '[ ]' represents range of char
